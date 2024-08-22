@@ -122,7 +122,10 @@ terraform init
 terraform plan
 terraform apply --auto-approve
 
+install kubectl (sudo snap install kubectl --classic)
 
+aws eks --region ap-southeast-2 update-kubeconfig --name devopsshack-cluster
+kubectl get nodes - 3
 
 
 
