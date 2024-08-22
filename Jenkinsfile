@@ -41,15 +41,16 @@ pipeline {
             }
         }
 
-        stage('Package') {
+        stage('Build') {
             steps {
                 sh "mvn package"
             }
         }
 
-        stage('Package') {
+        stage('Nexus Artifactory') {
             steps {
-                sh "mvn package"
+                
+                sh "mvn deploy"
             }
         }
 
