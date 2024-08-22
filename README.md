@@ -67,12 +67,12 @@ version: no change
 name: jdk17
 click install automatically/Install from adoptium.net/version: jdk-17.0.11+9
 
-Credentials:
+Credentials: 1
 manage jenkins/credentials/global/add
 git-cred: (secret text - needs token, if repo is in private)
-sonar-cred: (secret text - needs token)
+1.sonar-cred: (secret text - needs token)
 
-Servers Configuration: 2
+Servers Configuration: 1
 manage jenkins/system
 
 1.Sonarqube servers/add sonarqube
@@ -80,12 +80,34 @@ name: sonar-server
 url: http://3.27.232.79:9000
 select token
 
+Store Artifacts: 1
+manage jenkins/managed files
+
+add a new config/select "Global Maven settings.xml"/ID: maven-settings/next
+
+add 2 servers in servers section
+
+<server>
+      <id>maven-releases</id>
+      <username>admin</username>
+      <password>nexus</password>
+    </server>
+	
+	<server>
+      <id>maven-snapshots</id>
+      <username>admin</username>
+      <password>nexus</password>
+    </server>
+
+then, submit (we can communicate with Nexus)
+
 Dashboard: new item: Blogging-App/pipeline
 
 Discard Old Builds: Max - 2
 
 steps in building pipeline
 
+change url in pom.xml for releases and snapshots
 
 
 
