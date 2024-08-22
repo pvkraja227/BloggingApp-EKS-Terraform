@@ -101,13 +101,15 @@ add 2 servers in servers section
 
 then, submit (we can communicate with Nexus)
 
+change url in pom.xml for releases and snapshots
+
 Dashboard: new item: Blogging-App/pipeline
 
 Discard Old Builds: Max - 2
 
-steps in building pipeline
+buildnow
 
-change url in pom.xml for releases and snapshots
+
 
 
 
