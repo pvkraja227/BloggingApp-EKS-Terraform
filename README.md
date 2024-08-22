@@ -109,6 +109,13 @@ Discard Old Builds: Max - 2
 
 buildnow
 
+EC2: Terraform/t2.med
+install AWS CLI
+AWS Configure
+install terraform (sudo snap install terraform --classic)
+
+mkdir terraform/cd terraform
+vi main.tf
 
 
 
