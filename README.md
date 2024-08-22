@@ -126,6 +126,14 @@ install kubectl (sudo snap install kubectl --classic)
 
 aws eks --region ap-southeast-2 update-kubeconfig --name devopsshack-cluster
 kubectl get nodes - 3
+cd ..
+kubectl create ns webapps
+vi svc.yml
+kubectl apply -f svc.yml
+vi role.yml
+kubectl apply -f role.yml
+vi bind.yml
+kubectl apply -f bind.yml
 
 
 
