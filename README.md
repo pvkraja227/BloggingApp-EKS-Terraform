@@ -88,16 +88,16 @@ add a new config/select "Global Maven settings.xml"/ID: maven-settings/next
 add 2 servers in servers section
 
 <server>
-      <id>maven-releases</id>
-      <username>admin</username>
-      <password>nexus</password>
-    </server>
+	<id>maven-releases</id>
+      	<username>admin</username>
+      	<password>nexus</password>
+</server>
 	
-	<server>
-      <id>maven-snapshots</id>
-      <username>admin</username>
-      <password>nexus</password>
-    </server>
+<server>
+      	<id>maven-snapshots</id>
+      	<username>admin</username>
+      	<password>nexus</password>
+</server>
 
 then, submit (we can communicate with Nexus)
 
