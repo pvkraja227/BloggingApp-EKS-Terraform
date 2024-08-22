@@ -6,7 +6,9 @@ pipeline {
         jdk 'jdk17'
     }
     environment {
-        SCANNER_HOME= tool "sonar-scanner"
+        SCANNER_HOME= tool 'sonar-scanner'
+    }
+    
     stages {
 
         stage('Git Checkout') {
@@ -33,14 +35,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonar-server') {
-                sh '''$SONAR_HOME/bin/sonar-scanner -Dsonar.projectName=Blogging-App -Dsonar.projectKey=Blogging-App -Dsonar.java.binaries=target'''
-                }
-            }
-        }
-
         stage('Build') {
             steps {
                 sh "mvn package"
@@ -52,24 +46,35 @@ pipeline {
                 withMaven(globalMavenSettingsConfig: 'maven-settings', jdk: 'jdk17', maven: 'maven3', mavenSettingsConfig: '', traceability: true) {
                 sh "mvn deploy"
                 }
+                
             }
         }
-
-        stage('Package') {
+        
+        stage('Docker Build & Tag') {
             steps {
-                sh "mvn package"
+                script {
+                withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                
+                sh "docker build -t rajapvk23/blogging-apps:latest ."    
+                }
+                }
             }
         }
-
-        stage('Package') {
+        
+        stage('Trivy Image Scan') {
             steps {
-                sh "mvn package"
+                sh "trivy image --format table -o image.html rajapvk23/blogging-apps:latest"
             }
         }
-
-        stage('Package') {
+        
+        stage('Docker Push') {
             steps {
-                sh "mvn package"
+                script {
+                withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                
+                sh "docker push rajapvk23/blogging-apps:latest"    
+                }
+                }
             }
         }
     }
