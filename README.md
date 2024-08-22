@@ -41,6 +41,7 @@ Kubernetes Client API \
 Docker \
 Docker Pipeline \
 Pipeline Stage View \
+Eclipse Temurin Installer (for java 17) \
 
 (once plugins are installed, we need to configure - manage plugins/tools)
 
@@ -62,7 +63,7 @@ JDK installations:
 name: jdk17
 click install automatically/Install from adoptium.net/version: jdk-17.0.11+9
 
-Dashboard: new item: Bloggind-App/pipeline
+Dashboard: new item: Blogging-App/pipeline
 Discard Old Builds: Max - 2
 
 
