@@ -47,10 +47,11 @@ pipeline {
             }
         }
 
-        stage('Nexus Artifactory') {
+        stage('Publish Artifacts') {
             steps {
-                
+                withMaven(globalMavenSettingsConfig: 'maven-settings', jdk: 'jdk17', maven: 'maven3', mavenSettingsConfig: '', traceability: true) {
                 sh "mvn deploy"
+                }
             }
         }
 
