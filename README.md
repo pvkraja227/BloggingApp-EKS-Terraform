@@ -2,15 +2,15 @@ Sonar & Nexus - t2.med, Jenkins - t2.large
 
 sudo apt update - 3
 
-Jenkins:
+Jenkins: \
 install java17 \
-chrome: jenkins on ubuntu/latest release
-sudo cat /var - get pwd and open Jenkins dashboard
-install docker
+chrome: jenkins on ubuntu/latest release \
+sudo cat /var - get pwd and open Jenkins dashboard \
+install docker \
 sudo chmod 666 /var/run/docker.sock (one time permission to all users to use docker or else we need mention sudo at every instance)
 
-sonarqube:
-install docker
+sonarqube: \
+install docker \
 sudo chmod 666 /var/run/docker.sock (one time permission to all users to use docker or else we need mention sudo at every instance)
 docker run -itd -p 9000:9000 sonarqube:lts-community
 docker ps
