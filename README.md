@@ -116,6 +116,11 @@ install terraform (sudo snap install terraform --classic)
 
 mkdir terraform/cd terraform
 vi main.tf
+vi output.tf
+vi variables.tf
+terraform init
+terraform plan
+terraform apply --auto-approve
 
 
 
