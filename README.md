@@ -212,6 +212,27 @@ cd blackbox
 
 chrome: publicIP:9115 (for blackbox exporter)
 
+cd ..
+cd prometheus
+vi prometheus.yml (paste)
+change blackbox IP/and modify the URL's you wish to monitor (no godaddy domain)/monitor http:jenkinsIP:8080 and http://prometheus.io - 2 targets
+
+pgrep prometheus (2216)
+kill 2216
+./prometheus &
+goto prometheus dashboard/refresh/status/targets
+2 targets are getting monitored in prometheus
+
+goto graphana dashboard/connections/data sources/add data source/select prometheus
+provide prometheus url/save and test
+right corner/import dashboard
+chrome: blackbox dashboard id/goto Prometheus Blackbox Exporter (graphana labs) - ID 7587
+copy ID/paste/load
+select datasource - prometheus/import
+
+2 targets (http:jenkinsIP:8080 and http://prometheus.io) are getting monitored in Graphana
+
+
 
 
 
