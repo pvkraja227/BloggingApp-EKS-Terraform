@@ -198,6 +198,19 @@ tar -xvf <tar file> (to unzip)
 
 chrome: graphana download - 3 steps to install
 
+chrome: pvublicIP:3000 (for Graphana)
+default: admin/admin
+
+cd prometheus
+./prometheus & (so that it runs in background)
+
+chrome: publicIP:9090 (for prometheus)
+
+cd ..
+cd blackbox
+./blackbox_exporter &
+
+chrome: publicIP:9115 (for blackbox exporter)
 
 
 
