@@ -145,6 +145,11 @@ kubectl get secrets -n webapps - 2 (mysecretname and regcred)
 kubectl describe secret mysecretname -n webapps (copy token)
 jenkins dashboard: manage jenkins/credentials/secret text/paste token/k8-cred
 
+(added couple of stages in pipeline)
+
+buildnow
+
+external link is provided thru which we can access our app
 
 
 
