@@ -98,8 +98,8 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://5A2F1C9F022B77CE670614A08A5CFF2D.gr7.ap-southeast-2.eks.amazonaws.com') {
-                    sh "kubectl get pods"
-                    sh "kubectl get svc"
+                    sh "kubectl get pods -n webapps"
+                    sh "kubectl get svc -n webapps"
                     
                 }    
             }
