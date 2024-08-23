@@ -68,10 +68,12 @@ version: no change
 name: jdk17
 click install automatically/Install from adoptium.net/version: jdk-17.0.11+9
 
-Credentials: 1
+Credentials: 3 (k8-cred, at the bottom)
 manage jenkins/credentials/global/add
 git-cred: (secret text - needs token, if repo is in private)
 1.sonar-cred: (secret text - needs token)
+2.docker-cred: (username with password)
+
 
 Servers Configuration: 1
 manage jenkins/system
@@ -108,7 +110,6 @@ Dashboard: new item: Blogging-App/pipeline
 
 Discard Old Builds: Max - 2
 
-buildnow
 
 EC2: Terraform/t2.med
 install AWS CLI
@@ -147,9 +148,33 @@ jenkins dashboard: manage jenkins/credentials/secret text/paste token/k8-cred
 
 (added couple of stages in pipeline)
 
+Notification Email:
+
+https://myaccount.google.com/apppasswords (goto the link/type jenkins/copy password)
+manage jenkins/system/
+
+Email notification (open port 465 for smtp gmail in ec2 security group)
+SMTP server: smtp.gmail.com
+advanced/Use SMTP Authentication: provide gmail pvk.raja@gmail.com
+password: paste password which was created)
+check use SSL
+smtp port: 465
+Test e-mail recipient: pvk.raja@gmail.com
+
+Extended E-mail Notification
+SMTP server: smtp.gmail.com
+smtp port: 465
+advanced/create credentials/username with password
+user: pvk.raja@gmail.com
+password: pwd which we created
+mail-cred/add
+check use SSL
+save
+
 buildnow
 
 external link is provided thru which we can access our app
+check email (for notifications)
 
 
 
