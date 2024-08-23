@@ -176,6 +176,29 @@ buildnow
 external link is provided thru which we can access our app
 check email (for notifications)
 
+Godaddy: buy a domain and paste the externalIP under DNS/CNAME
+
+Terraform server:
+
+kubectl get nodes - 3
+kubectl get pods -n webapps - 2
+kubectl describe pod podID -n webapps (in which node/ec2, it is present out of 3 nodes)
+
+EC2: monitoring (t2.large)
+
+sudo apt update
+
+chrome: prometheus.io/download/prometheus for linux
+wget (url link)/ls
+tar -xvf <tar file> (to unzip)
+
+chrome: prometheus.io/download/blackbox exporter for linux
+wget (url link)/ls
+tar -xvf <tar file> (to unzip)
+
+chrome: graphana download - 3 steps to install
+
+
 
 
 
