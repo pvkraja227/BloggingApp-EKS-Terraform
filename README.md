@@ -9,6 +9,7 @@ sudo cat /var - get pwd and open Jenkins dashboard \
 install docker \
 sudo chmod 666 /var/run/docker.sock (one time permission to all users to use docker or else we need to mention sudo at every instance) \
 install trivy \
+install kubectl (sudo snap install kubectl --classic) \
 
 sonarqube: \
 install docker \
