@@ -140,7 +140,7 @@ vi secret.yml
 kubectl apply -f secret.yml -n webapps
 
 kubectl create secret docker-registry regcred --docker-server=https://index.docker.io/v1/ --docker-username=rajapvk23 --docker-password=xxxxxx -n webapps
-(secret is bcz our image is in private repository)
+(why secret: bcz our image is in private repository)
 
 kubectl get secrets -n webapps - 2 (mysecretname and regcred)
 kubectl describe secret mysecretname -n webapps (copy token)
