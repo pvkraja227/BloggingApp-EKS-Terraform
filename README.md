@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=kWON8yc6efU&t=25s
+
 Sonar & Nexus - t2.med, Jenkins - t2.large
 
 sudo apt update - all 3
@@ -196,7 +198,7 @@ chrome: prometheus.io/download/blackbox exporter for linux
 wget (url link)/ls
 tar -xvf <tar file> (to unzip)
 
-chrome: graphana download - 3 steps to install
+chrome: graphana download - 3 steps to install (at the end to start graphana enter sudo /bin/systemctl/...)
 
 chrome: pvublicIP:3000 (for Graphana)
 default: admin/admin
